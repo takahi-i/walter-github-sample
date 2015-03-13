@@ -1,0 +1,13 @@
+
+service:
+      type: github
+      token: $GITHUB_TOKEN
+      repo: walter-github-sample
+      from: takahi-i
+      update: .walter
+
+pipeline:
+    - name: execute redpen
+      type: command
+      command: redpen -c redpen-conf.xml -f markdown sampledoc-ja.md
+
