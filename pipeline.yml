@@ -9,5 +9,9 @@ service:
 pipeline:
     - name: execute redpen
       type: command
-      command: redpen -c redpen-conf.xml -f markdown sampledoc-ja.md
+      command: redpen -c redpen-conf.xml -f markdown sampledoc-ja.md  > log.txt
 
+cleanup:
+    - name: execute redpen
+      type: command
+      command: rm log.txt
